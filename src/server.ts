@@ -1,7 +1,10 @@
-import express from "express"
 
-const app = express();
+import dotenv from 'dotenv'
+dotenv.config();
+import express from 'express'
 
-const porta_api = 3333
-
-app.listen(porta_api, () => console.log('Rodando na porta:' + porta_api))
+const app = express()
+const PORT = process.env.APP_PORT;
+app.listen(PORT, () => {
+  console.log(' 💻 Started: ' + PORT)
+})
